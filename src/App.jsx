@@ -1,11 +1,19 @@
 import { useState } from "react";
 import "./style/App.css";
+import Header from "./components/Header.jsx";
+import Sidebar from "./components/Sidebar.jsx";
 
 function App() {
   return (
-    <>
-      <p className="text-3xl font-bold">Ciao Federico!</p>
-    </>
+    <section className="flex">
+        <div className="min-w-[20rem]">
+          <Sidebar/>
+        </div>
+
+        <div className="flex justify-center p-6 w-full">
+          <Header/>
+        </div>
+    </section>
   );
 }
 
