@@ -4,7 +4,7 @@ import Food from "../database/Food.js";
 
 // Definizione dei componenti stilizzati
 const SidebarSection = styled.section`
-    background-color: #606d40; // amber-200
+    background-color: #7a8d47; 
     color: black;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -15,7 +15,7 @@ const SidebarSection = styled.section`
     gap: 0.75rem; // 3 tailwind unit
 	
     // Aggiunta della larghezza fissa e max-width per responsività
-    width: 550px; // Larghezza fissa per la sidebar
+    width: 500px; // Larghezza fissa per la sidebar
     max-width: 100%; // Assicurati che la sidebar non superi la larghezza del dispositivo
 `;
 
@@ -71,7 +71,7 @@ const TextContainer = styled.div`
         bottom: 0;
         left: 0;
         right: 0;
-        height: 30px; // Altezza dell'effetto di sfumatura
+        height: 20px; // Altezza dell'effetto di sfumatura
         background: linear-gradient(to bottom, transparent, wheat 90%); // Sfumatura che si fonde con il colore di sfondo del Card
         z-index: 2; // Sovrappone l'effetto di sfumatura al testo
         border-bottom-right-radius: 0.5rem;

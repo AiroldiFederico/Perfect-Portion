@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import Header from "./components/Header.jsx";
 import Sidebar from "./components/Sidebar.jsx";
+import MainArea from "./components/MainArea.jsx";
 
 // Definizione dei componenti stilizzati
 const AppSection = styled.section`
@@ -17,7 +18,8 @@ const SidebarContainer = styled.div`
 
 const ContentContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 `;
 
@@ -30,6 +32,7 @@ function App() {
 
             <ContentContainer>
                 <Header/>
+                <MainArea></MainArea>
             </ContentContainer>
         </AppSection>
     );
