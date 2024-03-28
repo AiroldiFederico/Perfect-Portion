@@ -1,18 +1,19 @@
-// Importa styled da styled-components
-import styled from 'styled-components';
-import Food from "../database/Food.js";
 
-// Definizione dei componenti stilizzati
+import styled from 'styled-components';
+
+
+
 const SidebarSection = styled.section`
-    background-color: #7a8d47; 
+    background-color: #a0b469; 
     color: black;
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.75rem; // 3 tailwind unit
+	
 	
     // Aggiunta della larghezza fissa e max-width per responsività
     width: 500px; // Larghezza fissa per la sidebar
@@ -78,20 +79,20 @@ const TextContainer = styled.div`
     }
 `;
 
-// Componente Sidebar con styled-components
-export default function Sidebar() {
+
+export default function Sidebar({ selectFood, foodData }) {
 	return (
 		<SidebarSection>
 			<Input type="text" placeholder="What do you want to cook?" />
 
-			{Food.map((value) => (
-				<Card key={value.nome}>
+			{foodData.map((food, index) => (
+				<Card key={index} onClick={() => selectFood(food)}>
 					<ImageContainer>
-						<img src={value.immagine} alt={value.nome} />
+						<img src={food.immagine} alt={food.nome} />
 					</ImageContainer>
 					<TextContainer>
-						<div>{value.nome}</div>
-						<div>{value.descrizione}</div>
+						<div>{food.nome}</div>
+						<div>{food.descrizione}</div>
 					</TextContainer>
 				</Card>
 			))}

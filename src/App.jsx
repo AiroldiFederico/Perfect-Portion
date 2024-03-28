@@ -1,8 +1,11 @@
 
+import {useState} from "react";
+
 import styled from 'styled-components';
 import Header from "./components/Header.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import MainArea from "./components/MainArea.jsx";
+import Food from "./database/Food.js";
 
 // Definizione dei componenti stilizzati
 const AppSection = styled.section`
@@ -24,15 +27,17 @@ const ContentContainer = styled.div`
 `;
 
 function App() {
+    const [selectedFood, setSelectedFood] = useState(null);
+
     return (
         <AppSection>
             <SidebarContainer>
-                <Sidebar/>
+                <Sidebar selectFood={setSelectedFood} foodData={Food}/>
             </SidebarContainer>
 
             <ContentContainer>
                 <Header/>
-                <MainArea></MainArea>
+                {selectedFood && <MainArea food={selectedFood}/>}
             </ContentContainer>
         </AppSection>
     );
